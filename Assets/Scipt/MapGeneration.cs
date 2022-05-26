@@ -4,13 +4,15 @@ using System.Collections.Generic;
 
 /// 穴掘りアルゴリズム
 public class MapGeneration : MonoBehaviour  {
-  [SerializeField]int r_width = 7;
-  [SerializeField]int r_height = 7;
+  [SerializeField]int r_width = 5;
+  [SerializeField]int r_height = 5;
   int way = 0;
   int wall = 1;
   int start = 2;
   int goal = 3;
   Room layer;
+  Vector2Int startPos
+  Vector2Int goalPos
 
   void Start() {
     layer = Room(r_width,r_height);
@@ -20,8 +22,62 @@ public class MapGeneration : MonoBehaviour  {
   void Update() {
   }
 
-  void Dig(Room layer , int x , int y ) {}
-  void getSart() {}
+  Vector2Int Dig( Room layer , Vector2Int startPos) {
+        //スタート位置配列を複製
+        Vector2Int tmpStartPos = startPos;
+        
+//         int[] tmpStartPos = new int[2];
+//         _startPos.CopyTo(tmpStartPos, 0);
+//         //移動可能な座標のリストを取得
+//         Dictionary<int, int[]> movePos = GetPosition(tmpStartPos);
+//
+//         //移動可能な座標がなくなるまで探索を繰り返す
+//         while (movePos != null)
+//         {
+//             //移動可能な座標からランダムで1つ取得し通路にする
+//             int[] tmpPos = movePos[Random.Range(0, movePos.Count)];
+//             walls[tmpPos[0], tmpPos[1]] = 1;
+//
+//             //元の地点と通路にした座標の間を通路にする
+//             int xPos = tmpPos[0] + (tmpStartPos[0] - tmpPos[0]) / 2;
+//             int yPos = tmpPos[1] + (tmpStartPos[1] - tmpPos[1]) / 2;
+//             walls[xPos, yPos] = 1;
+//
+//             //移動後の座標を一時変数に格納し、再度移動可能な座標を探索する
+//             tmpStartPos = tmpPos;
+//             movePos = GetPosition(tmpStartPos);
+//         }
+//         //探索終了時の座標を返す
+//         return tmpStartPos;
+//     }
+//
+
+//
+//
+//     //与えられたx、y座標が範囲外の場合真を返す
+//     bool isOutOfRange(int x, int y)
+//     {
+//         return (x < 0 || y < 0 || x >= max || y >= max);
+//     }
+  }
+
+  Vector2Int getSart() {}
+ /*
+  * 移動可能な座標のリストを取得する
+  */
+  Dictionary<int, int[]> GetPosition(Vector2Int startPos) {
+    
+    //
+    //         //移動方向毎に2つ先のx,y座標を仮計算
+//         //移動方向毎に移動先の座標が範囲内かつ壁であるかを判定する
+//         //真であれば、返却用リストに追加する
+//         Dictionary<int, int[]> positions = position.Where(p => !isOutOfRange(p[0], p[1]) && walls[p[0], p[1]] == 0)
+//                                                    .Select((p, i) => new { p, i })
+//                                                    .ToDictionary(p => p.i, p => p.p);
+//         //移動可能な場所が存在しない場合nullを返す
+//         return positions.Count() != 0 ? positions : null;
+//     }
+  }
   }
 
 
