@@ -27,8 +27,9 @@ public class MapGeneration : MonoBehaviour  {
     int y = Mathf.RoundToInt(Random.Range(0, r_height));
     while ( x % 2 != 0 || y % 2 != 0) {
       x = Mathf.RoundToInt(Random.Range(0, r_width));
-      
+      y = Mathf.RoundToInt(Random.Range(0, r_height));
     }
+    return new Vector2Int(x,y);
   }
   Vector2Int Dig(Vector2Int startPos) {}
   Dictionay< int , Vector2Int> GetPosition(Vector2Int startPos) {}
