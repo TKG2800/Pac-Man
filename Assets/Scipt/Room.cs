@@ -2,12 +2,12 @@ public class Room {
   int Width;
   int Height;
   int outOfRange = -1;
-  int[][] values;
+  int[,] values;
   public Room( int width, int height ) {
     if (width > 0 && height > 0) {
       Width = width;
-      Height = height
-      values = new int[Width][Height];
+      Height = height;
+      values = new int[Width,Height];
     }
   }
    public bool IsOutOfRange( int x, int y ) {
@@ -19,15 +19,15 @@ public class Room {
     if(IsOutOfRange(x,y)) {
       return outOfRange;
     }
-    return values[x][y];
+    return values[x,y];
   }
   public void Set( int x, int y,int v) {
-    values[x][y] = v;
+    values[x,y] = v;
   }
   public void Fill(int val) {
     for (int i = 0 ; i < Width ; i++ ) {
       for (int j = 0; j < Height; j++ ) {
-        Set(i,j val);
+        Set(i,j,val);
       }
     }
   }

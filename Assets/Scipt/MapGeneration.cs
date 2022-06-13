@@ -11,15 +11,16 @@ public class MapGeneration : MonoBehaviour  {
   int start = 2;
   int goal = 3;
   Room layer;
-  Vector2Int startPos
-  Vector2Int goalPos
+  Vector2Int startPos;
+  Vector2Int goalPos;
 
   void Start() {
-    layer = Room(r_width,r_height);
+    layer = new Room(r_width,r_height);
     layer.Fill(wall);
   }
 
   void Update() {
+
   }
 
   Vector2Int GetStartPosition() {
@@ -32,5 +33,9 @@ public class MapGeneration : MonoBehaviour  {
     return new Vector2Int(x,y);
   }
   Vector2Int Dig(Vector2Int startPos) {}
-  Dictionay< int , Vector2Int> GetPosition(Vector2Int startPos) {}
+
+  Dictionary<int,Vector2Int> GetPosition(Vector2Int startPos) {}
+
   void BuildMap() {}
+
+}
